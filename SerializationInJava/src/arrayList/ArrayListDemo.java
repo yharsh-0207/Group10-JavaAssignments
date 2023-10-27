@@ -1,0 +1,56 @@
+//package arrayList;
+//
+//import java.io.*;
+//import java.util.*;
+//
+//public class ArrayListDemo{
+//
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		Student s1 = new Student();
+//		Student s2 = new Student();
+//		
+//		
+//		s1.setName("Harsh");
+//		s1.setAge(22);
+//		
+//		s2.setName("Nisha");
+//		s2.setAge(20);
+//		
+//		List<Student> myList = new ArrayList<>();
+//		
+//		myList.add(s1);
+//		myList.add(s2);
+//		
+//		FileInputStream fis = null;
+//		FileOutputStream fos = null;
+//		
+//		ObjectInputStream ois = null;
+//		ObjectOutputStream oos = null;
+//		
+//			try {
+//				fos = new FileOutputStream("abc.txt");
+//				oos = new ObjectOutputStream(fos);
+//				
+//				oos.writeObject(myList);
+//				
+//				fis = new FileInputStream("abc.txt");
+//				ois = new ObjectInputStream(fis);
+//				
+//				List<?> ref = null;
+//				ref = (List<?>) ois.readObject();
+//				
+//				Iterator<?> itr = ref.iterator();
+//				while(itr.hasNext()) {
+//					System.out.println(itr.next());
+//				}
+//			} catch (IOException | ClassNotFoundException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			
+//			
+//
+//	}
+//
+//}
