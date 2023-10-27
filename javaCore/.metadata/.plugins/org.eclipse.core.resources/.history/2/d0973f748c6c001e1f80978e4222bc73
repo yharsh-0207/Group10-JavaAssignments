@@ -1,0 +1,21 @@
+
+
+public class Demo3 {
+
+	static synchronized void disp() {
+		for(int i = 0; i < 10; i++)
+		System.out.println(Thread.currentThread().getName() + "\t" + i);
+	}
+	
+	public static void main(String[] args) {
+		
+		Runnable ref = ()-> {Demo3.disp();};
+		
+		Thread t1 = new Thread(ref, "First");
+		Thread t2 = new Thread(ref, "Second");
+		t1.start();
+		t2.start();
+
+	}
+
+}

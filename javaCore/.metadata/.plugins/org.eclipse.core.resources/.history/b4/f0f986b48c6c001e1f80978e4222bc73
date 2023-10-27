@@ -1,0 +1,23 @@
+
+interface First{
+	
+	
+	int add(int a, int b);
+}
+
+class Math1{
+	int calc(int a, int b) {
+		return a+b;
+	}
+}
+public class Demo3 {
+
+	
+	Math1 m1 = new Math1();
+	
+	First ref1 = (a,b)-> {return m1.calc(10, 20);};
+	
+	First ref2 = m1::calc;
+	
+	ref2.add(20, 30);
+}

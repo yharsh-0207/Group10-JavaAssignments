@@ -1,0 +1,129 @@
+package assignments;
+
+ class UIComponent{
+	void fun() {
+		System.out.println("in UIComponent fun");
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+}
+
+class Button extends UIComponent{
+	void fun() {
+		System.out.println("in Button fun");
+	}
+	
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "Button";
+	}
+}
+
+class TextField extends UIComponent{
+	void fun() {
+		System.out.println("in TextField fun");
+	}
+	
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "TextField";
+	}
+}
+
+class CheckBox extends UIComponent{
+	void fun() {
+		System.out.println("in CheckBox fun");
+	}
+	
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "CheckBox";
+	}
+}
+
+abstract class UIComponentCreator{
+	void show(String type) {
+		UIComponent comp = createUIComponent(type);
+		add(comp);
+	}
+	
+	void add(UIComponent component) {
+		System.out.println("Added the Component\t" + component);
+	}
+	
+	public abstract UIComponent createUIComponent(String type);
+}
+
+class WindowsUIComponentCreator extends UIComponentCreator{
+
+	@Override
+	public UIComponent createUIComponent(String type) {
+		// TODO Auto-generated method stub
+		if("Button".equalsIgnoreCase(type)) {
+			return new Button();
+		}
+		else if("TextField".equalsIgnoreCase(type)) {
+			return new TextField();
+		}
+		else
+			return new CheckBox();
+	}
+	
+	
+}
+
+class LinuxUIComponentCreator extends UIComponentCreator{
+
+	@Override
+	public UIComponent createUIComponent(String type) {
+		// TODO Auto-generated method stub
+		if("Button".equalsIgnoreCase(type)) {
+			return new Button();
+		}
+		else if("TextField".equalsIgnoreCase(type)) {
+			return new TextField();
+		}
+		else
+			return new CheckBox();
+	}
+	
+	
+}
+
+class MacUIComponentCreator extends UIComponentCreator{
+	
+	@Override
+	public UIComponent createUIComponent(String type) {
+		// TODO Auto-generated method stub
+		if("Button".equalsIgnoreCase(type)) {
+			return new Button();
+		}
+		else if("TextField".equalsIgnoreCase(type)) {
+			return new TextField();
+		}
+		else
+			return new CheckBox();
+	}
+	
+	
+}
+public class Ass4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		WindowsUIComponentCreator win = new WindowsUIComponentCreator();
+		win.show("Button");
+		
+		LinuxUIComponentCreator lin = new LinuxUIComponentCreator();
+		lin.show("TextField");
+		
+		MacUIComponentCreator mac = new MacUIComponentCreator();
+		mac.show("CheckBox");
+	}
+
+}

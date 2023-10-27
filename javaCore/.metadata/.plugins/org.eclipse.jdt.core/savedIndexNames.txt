@@ -1,0 +1,6 @@
+INDEX VERSION 1.134+/Users/harsh/Desktop/programming/javaCore/.metadata/.plugins/org.eclipse.jdt.core
+3468314333.index
+3097343099.index
+1704754536.index
+3015504557.index
+1865797976.index

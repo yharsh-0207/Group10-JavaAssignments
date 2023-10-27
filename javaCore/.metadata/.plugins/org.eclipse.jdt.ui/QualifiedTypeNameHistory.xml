@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="java.io.DataOutputStream"/>
+    <fullyQualifiedTypeName name="java.io.DataInputStream"/>
+    <fullyQualifiedTypeName name="fileHandlingRevision.RandomAccess"/>
+    <fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="assignments.Q2.Sub1"/>
+    <fullyQualifiedTypeName name="assignments.Base1"/>
+    <fullyQualifiedTypeName name="assignments.Base"/>
+    <fullyQualifiedTypeName name="assignments.Sub"/>
+    <fullyQualifiedTypeName name="assignments.UIComponent"/>
+    <fullyQualifiedTypeName name="assignments.UIComponentCreator"/>
+    <fullyQualifiedTypeName name="assignments.TextField"/>
+    <fullyQualifiedTypeName name="assignments.CheckBox"/>
+    <fullyQualifiedTypeName name="assignments.WindowsUIComponentCreator"/>
+    <fullyQualifiedTypeName name="java.lang.LinkageError"/>
+    <fullyQualifiedTypeName name="assignments.LinuxUIComponentCreator"/>
+    <fullyQualifiedTypeName name="assignments.MacUIComponentCreator"/>
+    <fullyQualifiedTypeName name="Saving"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="arrayList.Student"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.io.Serializable"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="HashMap.Myclass"/>
+    <fullyQualifiedTypeName name="java.io.FileOutputStream"/>
+    <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
+    <fullyQualifiedTypeName name="java.io.FileInputStream"/>
+    <fullyQualifiedTypeName name="java.io.ObjectInputStream"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+</qualifiedTypeNameHistroy>

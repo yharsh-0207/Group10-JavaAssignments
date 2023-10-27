@@ -1,0 +1,47 @@
+import java.io.*;
+class abc implements Serializable
+{
+	int num1=10;
+	char ch[] = new char[100];
+	for(char i = 1 ; i<'Z' ; i++)
+	{
+		ch[i] = i;
+	}
+}
+class xyz extends abc
+{
+	int num2 =20;
+}
+
+public class CourseDemo 
+{	String name = "obaid";
+	int age = 25;
+	transient Thread t1 = new Thread();
+	public static void main(String[] args) {
+		
+		try(FileOutputStream fos = new FileOutputStream("d:\\xyz.java"))
+		{try(ObjectOutputStream oos = new ObjectOutputStream(fos))
+			{
+				xyz x1 = new xyz();
+				oos.writeObject(x1);
+				x1 = null;
+			}
+		try(FileInputStream fis = new FileInputStream("d:\\xyz.java"))
+		{try(ObjectInputStream ois = new ObjectInputStream (fis))
+			{
+//				CourseDemo d2 = (CourseDemo)ois.readObject();
+//				System.out.println("printing new object age "+d2.age);
+				xyz x2 = (xyz)ois.readObject();
+				System.out.println(x2.num2);
+				System.out.println(x2.num1);
+			}
+			
+		}
+		}
+		catch(Exception ee)
+		{
+			System.out.println("control is here");
+		}
+	}
+}
+}
