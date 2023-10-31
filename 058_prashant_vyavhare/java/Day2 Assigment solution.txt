@@ -1,0 +1,197 @@
+1>
+create a class "Shape" with 2 attributes, "width" and "height". Make sure one can not access these attributes directly.
+provide accessor methods on these attributes and allow them to call from outside of your class.
+
+class Shape {
+
+	
+	private int width;
+	private int height;
+	
+	public void setWidth(int width) {
+		this.width=width;
+	}
+	public void setHeight(int height) {
+		this.height=height;
+	}
+	int getWidth() {
+		return width;
+	}
+	int getHeight() {
+		return height;
+	}
+}
+public class Demo {
+	
+	public static void main(String[] args) {
+		
+		Shape s1=new Shape();
+		s1.setHeight(10);
+		s1.setWidth(10);
+		System.out.println(s1.getHeight());
+		System.out.println(s1.getWidth());
+	}
+	
+}
+
+2> Define a class "MyClass" and make sure clients can instantiate it , 
+a) without any argument
+b) with one int argument
+c) with two int arguments
+
+ class MyClass {
+	  
+	 MyClass(){
+		 System.out.println("without any arugment");
+	 }
+	 MyClass(int k){
+		 System.out.println(k);
+		 System.out.println("with one int arugment");
+	 }
+	 MyClass(int j,int k){
+		 System.out.println(k+" "+j);
+    	System.out.println("with two int arugment "); 
+     }
+}
+public class Demo1{ 
+ public static void main(String args[]) {
+	 
+	   MyClass m1=new MyClass();
+	   MyClass m2=new MyClass(10);
+	   MyClass m3=new MyClass(10,20);
+	 
+ }
+}
+
+3>Define a class "Emp" with private static member "int cnt".
+How will u make sure that outsiders can read the value of cnt ?
+
+ class Emp {
+     private static int cnt;
+     public static void setEmp(int k) {
+    	 cnt=k;
+     }
+    
+     public static int  getEmp() {
+    	 return cnt;
+     }
+}
+ public class demo2{
+	 public static void main(String[] args) {
+		Emp.setEmp(10); 
+		System.out.println(Emp.getEmp());   
+	}
+ }
+
+4>Define a class "DemoOb". 
+create an instance of it.
+now create a reference and assign the reference created in the above statement.
+	Discuss what happens?
+Now since u have 2 references, take one of the reference and assign a new instance of the class.
+	Discuss what happens?
+(For ur discussion, write necessary comments in the program)
+
+ class DemoOb {
+   private int num;
+
+   public void setNum(int num) {
+	   this.num=num;
+   }
+   public int getNum() {
+	   return num;
+   }
+	
+}
+ public class demo3{
+	  public static void main(String[] args) {
+		
+		  DemoOb d1=new DemoOb();
+		  d1.setNum(100);
+		  DemoOb d2=d1;
+		  //here the ref d2 is now referring to the object which is already referee by d1
+		  d2=new DemoOb();
+		  //ref d2 is referring to the newly create obj 
+		  System.out.println(d1.getNum());
+	}
+	 
+ }
+
+6> Define 3 classes A , B and C
+in all these classes create static and nonstatic variables as well as methods.
+	Now Define a class "Demo" ,in which define "main" function. From this main function try to access all the members of A ,B  and C.
+
+class A{
+	private int num=10;
+	private static int num1=20;
+	
+	public int getNumA() {
+		return num;
+	}	
+	public static int getNum1() {
+		return num1;
+	}
+    
+}
+class B{
+	private int num=40;
+	private static int num1=50;
+	public int getNumB() {
+		return num;
+	}
+	public static int getNum1() {
+		return num1;
+	}
+}
+class C{
+	private int num=480;
+	private static int num1=500;
+	public int getNumC() {
+		return num;
+	}
+	public static int getNum1() {
+		return num1;
+	}
+}
+public class demo5 {
+	public static void main(String[] args) {
+	A a=new A();
+	System.out.println(a.getNumA());
+	System.out.println(A.getNum1());
+	B b=new B();
+	System.out.println(b.getNumB());
+	System.out.println(B.getNum1());
+	C c=new C();
+	System.out.println(c.getNumC());
+	System.out.println(c.getNum1());
+	}
+}
+
+6>define static initializers in the above A,B and C classes and check the order of their execution.
+class C1{
+	static {
+	System.out.println("in a class c1");
+	}
+}
+class A1{
+	static {
+		System.out.println("in a class A1");
+		
+	}
+    
+}
+class B1{
+	static {
+	System.out.println("in a class B1");
+	}
+}
+
+	
+
+public class demo6 {
+	public static void main(String[] args) {
+		C1 c=new C1();
+		A1 a=new A1();
+		B1 b=new B1();
+
+	}
+}
