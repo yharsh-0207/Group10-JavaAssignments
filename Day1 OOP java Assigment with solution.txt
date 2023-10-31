@@ -1,0 +1,312 @@
+
+1>display a table of a particular number  
+public class demo {
+	public static void main(String[] args) {	
+     for(int i=1;i<=10;i++) {
+    	 int num=5;
+    	   System.out.println(i+"*"+num+"="+i*num);
+     }
+   }
+}
+
+2>declare two numbers and one operator as a character. e.g. '+'
+using switch... case check which operator is declared and accordingly perform the action.
+      public static void main(String[] args) {
+		int a=10;
+		int b=20;
+		char c='/';
+		switch(c){
+		case'+':
+			System.out.println(a+b);
+			break;
+		case '-':
+			System.out.println(a-b);
+			break;
+		case '*':
+			System.out.println(a*b);
+			break;
+			default:
+				System.out.println("enter the correct operator");	
+		}	
+	  }
+
+
+3>Display numbers  1 to 10 using loop
+public class demo9 {
+	public static void main(String[] args) {
+	for(int i=1;i<=10;i++) {
+		System.out.println(i);
+	}
+   }
+}
+
+4>Display numbers from 3 to 30 except number 24  using loop.
+public class demo2 {
+	public static void main(String[] args) {
+		for(int i=3;i<=30;i++) {
+			if(i==24)
+				continue;
+			System.out.println(i);
+		}
+		
+	}
+
+}
+
+5> Using if…….else if….  Else,  display whether result is  
+   fail, pass, second class , first class, Distinction etc.
+public class demo3 {
+	public static void main(String[] args) {
+		
+		int res=75;
+		if(res<=35) 
+			System.out.println("fail");
+		
+		else if(res>=35&&res<=50) 
+		System.out.println("pass");
+		
+		else if(res>=50&&res<=60) 
+			System.out.println("second class");
+		
+		else if(res>=60&&res<=75) 
+			System.out.println("first class");
+		
+		else if(res>=75&&res<=100) 
+			System.out.println("distinction");
+		
+		else 
+			System.out.println("enter the mark int the range 0-100");
+		
+	}
+}
+
+6> display all prime numbers between 3 to 30
+public class demo5 {
+	
+	public static void main(String[] args) {
+       int flag;
+       for(int i=2;i<=30;i++) {
+    	   flag=0;
+    	   for(int n=2;n<i;n++) {
+    		   if(i%n==0) {
+    			   flag=1;
+    		   }
+    	   }
+    	   if(flag==0) {
+    		   System.out.println(i);
+    	   }
+       }
+			
+	}
+
+}
+
+7>using nested for loop display following :
+	
+	A  a
+	A  b
+	A  c
+	
+	B  a
+	B  b
+	B  c
+	
+	C  a
+	C  b
+	C  c
+public class demo4 {
+	public static void main(String args[]) {
+		
+        for (char outer = 'A'; outer <= 'C'; outer++) {
+            for (char inner = 'a'; inner <= 'c'; inner++) {
+                System.out.println(outer + "  " + inner);
+            }
+            System.out.println();
+        }
+
+	}
+
+}
+
+8>solve following patten programs:
+
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+public class demo6 {
+  public static void main(String[] args) {
+	
+	  for(int i=0;i<5;i++) {
+		  for(int j=5;j>i;j--) {
+			  System.out.print(" ");
+		  }
+		  for(int k=0;k<=i;k++) {
+			  System.out.print('*'+" ");
+		  }
+		  System.out.println();
+	  }
+	 
+}
+}
+
+9>solve following patten programs:
+       * * * * 
+        * * * 
+         * * 
+          *
+
+public class demo7 {
+	public static void main(String[] args) {
+		
+		for(int i=0;i<4;i++) {
+			for(int j=0;j<i;j++) {
+				System.out.print(" ");
+			}
+			for(int k=4;k>i;k--) {
+				System.out.print('*'+" ");
+			}			
+                   System.out.println();
+		}
+		
+	}
+      
+
+}
+
+10>solve following patten programs:
+
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+public class day1_10 {
+	public static void main(String args[]) {
+		
+		 for(int i=0;i<4;i++) {
+			 for(int j=3;j>i;j--) 
+			  { 
+				 System.out.print(' ');
+			  }
+		 for(int k=0;k<=i;k++) { 
+			 System.out.print('*'); 
+			 System.out.print(' ');
+			 }
+		    System.out.println();
+		  
+		 }
+		for(int l=0;l<3;l++) {
+			for(int r=0;r<=l;r++) {
+				System.out.print(' ');
+			}
+			for(int t=3;t>l;t--) {
+				System.out.print('*');
+				System.out.print(' ');
+			}
+			System.out.println();
+		}
+	}
+}
+
+11>accept two numbers and add them.
+public class demo10 {
+
+public static void main(String[] args) {
+  Scanner sc=new Scanner(System.in);
+  System.out.println("enter the number a:");
+  int a=sc.nextInt();
+  System.out.println("enter the number b:");
+  int b=sc.nextInt();
+  System.out.println("sum of a & b:"+a+b);
+ 
+}
+12>accept two numbers and subtract them.
+public static void main(String[] args) {
+		
+	
+  Scanner sc=new Scanner(System.in);
+  System.out.println("enter the number a:");
+  int a=sc.nextInt();
+  System.out.println("enter the number b:");
+  int b=sc.nextInt();
+  System.out.println("subraction of a & b:"+(a-b));
+ 
+}
+
+
+13>accept two numbers and multiply them.
+public static void main(String[] args) {
+	
+	
+  Scanner sc=new Scanner(System.in);
+  System.out.println("enter the number a:");
+  int a=sc.nextInt();
+  System.out.println("enter the number b:");
+  int b=sc.nextInt();
+  System.out.println("multipction of a & b:"+(a*b));
+ 
+}
+
+14>accept two numbers and devide them.
+public static void main(String[] args) {
+	
+	
+  Scanner sc=new Scanner(System.in);
+  System.out.println("enter the number a:");
+  int a=sc.nextInt();
+  System.out.println("enter the number b:");
+  int b=sc.nextInt();
+  System.out.println("div of a & b:"+(a/b));
+ 
+}
+
+15>accept two numbers and check whether first number is greater or second number is greater or they are equal.
+
+public static void main(String[] args) {	
+  Scanner sc=new Scanner(System.in);
+  System.out.println("enter the number a:");
+  int a=sc.nextInt();
+  System.out.println("enter the number b:");
+  int b=sc.nextInt();
+ 
+  if(a>b) 
+	  System.out.println("a is greater ");
+  else if(b>a) {
+	  System.out.println("b is greater");
+  }
+  else {
+	  System.out.println("both number are equal");
+  }
+}
+
+16>accept a number and check whether it is divisible by 3 or not.
+public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in); 
+		System.out.println("enter the number a:");
+		int a=sc.nextInt();
+		if(a%3==0) {
+			System.out.println("no is divisable by 3");
+		}
+		else {
+			System.out.println("no is not divisable by 3");
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
