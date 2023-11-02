@@ -1,0 +1,90 @@
+Devloper Side -----
+
+/**
+ * 
+ */
+package devpack;
+
+/**
+ * @author Pratik
+ *
+ */
+public class Myclass1 {
+   private int num;
+   
+   /**
+ * @param num
+ */
+public Myclass1(int num)
+   {
+	   this.num=num;
+   }
+
+/**
+ * @return the num
+ */
+public int getNum() {
+	return num;
+}
+
+/**
+ * @param num the num to set
+ */
+public void setNum(int num) {
+	this.num = num;
+}
+   
+}
+
+
+/**
+ * 
+ */
+package devpack;
+
+/**
+ * @author Avadhut
+ *
+ */
+public class Myclass2 {
+	private int sum;
+	
+	public Myclass2(int sum)
+	{
+		this.sum=sum;
+	}
+
+	/**
+	 * @return the sum
+	 */
+	public int getSum() {
+		return sum;
+	}
+
+	/**
+	 * @param sum the sum to set
+	 */
+	public void setSum(int sum) {
+		this.sum = sum;
+	}
+	
+
+}
+
+
+Client Side ------
+
+
+import devpack.Myclass1;
+
+public class ClientApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+       Myclass1 m1 = new Myclass1(20);
+       m1.setNum(100);
+       System.out.println(m1.getNum());
+       System.out.println(m1);
+	}
+
+}
