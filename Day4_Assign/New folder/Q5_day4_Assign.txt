@@ -1,0 +1,65 @@
+
+Q.5> 
+
+package p1;
+
+class base {
+	
+	int num1=10;
+	
+    base()
+{
+
+  System.out.println("inside person constructor");
+}
+ void disp() {
+	 
+	 System.out.println(num1);
+	 
+ }
+}
+class sub extends base{
+	
+	int num2=20;
+	
+       sub()
+{
+     System.out.println("insise employee constructor");
+}
+
+   
+	void disp2()
+	{
+		System.out.println(num2);
+	}
+	}
+
+class sub1 extends sub{
+	
+	   int num3=40;
+	   
+	   sub1(){
+		   System.out.println("inside sub1 constructor");
+		   
+	   }
+	   void disp3() 
+	   {
+			System.out.println(num3);
+		   
+	   }
+}
+
+public class Demo {
+
+	public static void main(String[] args) {
+		
+		sub1 s= new sub1();
+		s.disp();
+		s.disp2();
+		s.disp3();
+		 
+		 
+
+	}
+
+}
