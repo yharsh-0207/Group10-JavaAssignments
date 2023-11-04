@@ -1,0 +1,43 @@
+package p1;
+
+class Singleton{
+	
+	private static Singleton s1= new Singleton();
+	
+	
+	Singleton(){
+		
+		
+	}
+	void disp1()
+	{
+		System.out.println("in disp1");
+	}
+	void disp2()
+	{
+		System.out.println("in disp2");
+	}
+	
+	public static Singleton getsingleton() { //
+		
+		return s1;   // return the reference of obj hence rerurn type is class name.
+	}
+	
+}
+
+
+
+
+
+public class demoSingleton {
+
+	  public static void main() {
+	Singleton ref=	Singleton.getsingleton();  // new myclass
+	
+	ref.disp1();
+	ref.disp2();
+	
+	Singleton.getsingleton().disp1();
+	Singleton.getsingleton().disp2();
+	
+}}
