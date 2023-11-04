@@ -1,0 +1,45 @@
+
+Q1>
+package p1;
+
+class First{
+	int num1;
+	First(){
+		
+		num1=10;
+		System.out.println("inside first const");
+		
+	}
+	void disp1() {
+		
+		System.out.println("inside disp1");	
+		}	
+}
+class Second{
+	int num2;
+	Second(){
+		num2=11;
+		System.out.println("inside second const");
+		
+	}
+	void disp2() {
+		
+		System.out.println("inside disp2");
+	}
+	
+}
+
+public class Two {
+
+	public static void main(String args[]) {
+		
+		First f1= new First();
+		f1.disp1();
+		System.out.println(f1.num1);
+	  Second s2= new Second ();
+	   s2.disp2();
+	   System.out.println(s2.num2);
+	}
+	
+	
+}

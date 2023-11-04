@@ -1,0 +1,318 @@
+
+//1)create a class "Shape" with 2 attributes, "width" and "height". Make sure one can not access these attributes directly.
+//provide accessor methods on these attributes and allow them to call from outside of you
+
+package p;
+class Shape{
+	
+private  int width;
+private int height;
+	
+	
+public int  getWidth() {
+		
+		return width;
+	}
+	
+public void setWidth(int k) {
+	  this.width=k;
+	  
+}
+public int  getHeight() {
+		
+		return height;
+	}
+
+public void setHeight(int k) {
+	  
+	  this.height=k;
+}
+	
+}
+
+
+public class p2{
+	
+	 public static void main(String []args) {
+		 
+		 
+		 Shape s1= new Shape();
+		 s1.setWidth(200);
+		 System.out.println(s1.getWidth());
+		 
+		   s1.setHeight(300);
+		   System.out.println(s1.getHeight());
+		 
+	 }
+
+		
+}
+...........................................................................
+
+
+package p1;
+
+//2) Define a class "MyClass" and make sure clients can instantiate it , 
+//a) without any argument
+//b) with one int argument
+//c) with two int arguments
+
+class demo{
+	int num;
+	
+	demo(){
+		
+		System.out.println("no args cons");
+	}
+	demo(int k){
+		this.num=k;
+		System.out.println("one  args cons");
+		System.out.println(k);
+	}
+	demo(int k, int s){
+		this.num=k;
+		this.num=s;
+		System.out.println("two  args cons");
+		System.out.println(k+"\t"+s);
+		
+	}
+
+}
+public class Myclass{
+	
+	public static void main(String args[]) {
+		
+		demo d1= new demo();
+		demo d2= new demo(10);
+		demo d3=  new demo(10,20);
+		
+	}
+	
+}
+
+..........................................................
+
+package p1;
+
+//3) Define a class "Emp" with private static member "int cnt".
+//How will u make sure that outsiders can read the value of cnt ?
+
+class demo{
+	
+	private static int cnt;
+
+   public static int getcnt() {
+	   
+	   return cnt;
+	   
+   }
+   public static void setcnt(int k) 
+     {
+	   
+	    cnt = k;
+	   
+       }
+	
+}
+
+
+public class Myclass {
+	
+	public static void main(String agrs[]) {
+		
+	demo.setcnt(100);
+	System.out.println(demo.getcnt());
+		
+		
+		
+	}
+	
+	
+	
+}
+..............................................................................
+
+package p1;
+
+4) Define a class "DemoOb". 
+create an instance of it.
+now create a reference and assign the reference created in the above statement.
+	Discuss what happens?
+Now since u have 2 references, take one of the reference and assign a new instance of the class.
+	Discuss what happens?
+(For ur discussion, write necessary comments in the program)
+
+class demo{
+	
+	int num;
+
+   public  int getnum() {
+	   
+	   return num;
+	   
+   }
+   public  void setnum(int k) 
+     {
+	   
+	    this.num = k;
+	   
+       }
+	
+}
+
+
+public class Myclass {
+	
+public static void main(String agrs[]) {
+		
+  demo d1= new demo();
+ demo d2=d1; //  d2 is a reference which is pointing to those object which d1 is refer to
+ d2.setnum(10);
+ System.out.println(d2.getnum());
+ 
+ d2=new demo(); // here now we have allocated a memory for  d2 ref it means that d2 is referring to newly allocated memory
+ // d2 is not pointing to that obj where d1 is pointing.// both are pointing to differnt obj
+  
+	d2.setnum(100);	
+    System.out.println(d2.getnum());		
+		
+	}
+	
+	
+	
+}
+.......................................................................
+
+
+package p1;
+
+//5) Define 3 classes A , B and C
+in all these classes create static and nonstatic variables as well as methods.
+Now Define a class "Demo" ,in which define "main" function. From this main function try to access all the members of A ,B  and C.
+
+class A{
+	
+	private static int num1=300;
+	private int num2;
+	
+	   public static int getnum() {
+		   
+		   
+		   return num1;
+	   }
+	   public void setnum(int k) {
+		   
+		   this.num2=k;
+	   }
+
+	
+	
+}
+class B{
+	
+	
+	private static int num1=200;
+	private int num2;
+	
+	   public static int getnum() {
+		   
+		   
+		   return num1;
+	   }
+	   public void setnum(int k) {
+		   
+		   this.num2=k;
+	   }
+	
+}
+class C{
+	
+	private static int num1=100;
+	private int num2;
+	
+	   public static int getnum() {
+		   
+		   
+		   return num1;
+	   }
+	   public void setnum(int k) {
+		   
+		   num2=k;
+	   }
+	
+}
+
+public class Myclass{
+	
+	public static void main(String args[]) {
+		
+	A a1= new A();
+	a1.setnum(100);
+	System.out.println(A.getnum());
+	
+	B b1= new B();
+	b1.setnum(200);
+	System.out.println(B.getnum());
+	
+	C c1= new C();
+	c1.setnum(300);
+	System.out.println(C.getnum());
+		
+	}
+	
+	
+}
+
+
+.......................................................
+// define static initializers in the above A,B and C classes and check the order of their execution.
+
+package p1;
+
+//6) define static initializers in the above A,B and C classes and check the order of their execution.
+
+class A{
+	
+	
+    static {
+    	
+    	System.out.println("inside class A static initializer");
+    }
+	
+}
+class B{
+	
+	 static {
+	    	
+	    	System.out.println("inside class B static initializer");
+	    }
+	
+}
+class C{
+	
+	 static {
+	    	
+	    	System.out.println("inside class C static initializer");
+	    }
+	
+}
+
+public class Myclass{
+	
+	public static void main(String args[]) {
+        C c1= new C();
+	A a1= new A();
+	B b1= new B();
+	// at the time of class loading static initializer block will be invoked.
+	
+	}
+}
+
+
+
+
+
+
+
+
+

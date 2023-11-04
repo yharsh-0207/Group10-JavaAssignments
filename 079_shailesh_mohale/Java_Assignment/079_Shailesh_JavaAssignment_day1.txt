@@ -1,0 +1,370 @@
+package day1;
+/*1) accept two numbers and add them.
+2) accept two numbers and subtract them.
+3) accept two numbers and multiply them.
+4) accept two numbers and devide them.
+5) accept two numbers and check whether first number is greater or second number is greater or they are equal.
+6) accept a number and check whether it is divisible by 3 or not.
+*/
+
+import java.util.Scanner;
+public class day1_1 {
+	public static int add(int a,int b) {
+		int add=a+b;
+		return add;
+	}
+	public static int mult(int j,int k) {
+		int mult=j*k;
+		return mult;
+	}
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int a,b;
+		System.out.println("Enter a: ");
+		a=sc.nextInt();
+		System.out.println("Enter b: ");
+		b=sc.nextInt();
+		int sub=a-b;
+		
+			///addition,sub,mult,divide
+		System.out.println("addition="+add(a,b));
+		System.out.println("substraction="+sub);
+		System.out.println("multiplication="+mult(a,b));
+		
+		//greater of two number
+		if(a>b) {
+			System.out.println("a is greater");
+		}
+		else
+			System.out.println("b is greater");
+		//check if a is divisible by 3 or not
+		if(a%3==0) {
+			System.out.println("a is divisible by 3");
+		}
+		else
+			System.out.println("a is not divisible by 3");
+	}
+
+
+
+
+-----------------------------------------------------------------------------------------------------------
+
+
+
+
+
+package p1;
+
+import java.util.Scanner;
+solve following pattern.
+
+A  a
+A  b
+A  c
+
+public class Myclass {
+
+	/*public static void main(String[] args) {
+	
+		 char ch='A';
+		 char ch1='a';
+		
+		
+		 for(int i=0;i<3;i++) {
+			 
+			 for(int j=2;j>=i;j--) {
+				 System.out.println(ch + "\t" + ch1);	
+				 ch1++;
+			 }
+			 
+		
+			 
+		 }
+	}*/
+	
+	
+/   // solve following 
+
+B  a
+B  b
+B  c
+
+
+
+
+     public static void main(String args[]) {
+		
+		
+		char ch='B';
+		char ch1='a';
+		
+		for(int i=0;i<3;i++) {
+			
+			for(int j=2;j>=i;i++) {
+				
+				System.out.println(ch+"\t"+ch1);
+				ch1++;
+			}
+		}
+	}*/
+	
+
+
+
+
+
+/*	
+    // solve following pattern.
+
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+
+
+
+
+
+public static void main(String args[]) {
+		
+		
+		for(int i=0;i<5;i++) {
+			for(int space=4;space>i;space--) 
+			{
+			System.out.print(" ");	
+				
+			}
+			for(int j=0;j<=i;j++)
+			{
+				
+				System.out.print("* ");
+			}
+			System.out.println(" ");
+		}
+	}*/
+	
+
+ //  solve follwing pattern
+       * * * * 
+  	* * * 
+  	 * * 
+          * 
+	/*public static void main(String args[]) {
+		
+		for(int i=0;i<5;i++) {
+		
+			for(int space=0;space <=i;space ++)
+			{
+				
+				System.out.print(" ");
+			}
+			for(int j=5;j>i;j--) 
+			{
+				System.out.print("* ");;
+				
+			}
+			System.out.println(" ");
+		}
+		
+	}*/
+ //solve following pattern
+    * 
+   * * 
+  * * * 
+ * * * * 
+  * * * 
+   * * 
+    * 
+	
+   /*public static void main(String args[]) 
+   {
+		
+		
+		for(int i=0;i<5;i++) 
+		{
+			for(int space=4;space>i;space--) 
+			{
+			System.out.print(" ");	
+				
+			}
+			for(int j=0;j<=i;j++)
+			{
+				
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	
+		
+			
+			for(int i=0;i<5;i++)
+			{
+			
+				for(int space=1;space <=i;space ++)
+				{
+					
+					System.out.print(" ");
+				}
+				for(int j=4;j>i;j--) 
+				{
+					System.out.print(" *");;
+					
+				}
+				System.out.println();
+			}
+
+}*/
+
+	/*print all prime no from 3 to 30
+	
+public static void main(String args[]) 
+{
+	
+	
+	Scanner sc= new Scanner (System.in);
+	
+	System.out.println("enter the 1st no");
+	int a=sc.nextInt();
+	System.out.println("enter the 1st no");
+	int b=sc.nextInt();
+	
+	printno(a,b);
+}
+
+	public  static void printno(int a, int b) {
+		for(int i=a;i<=b;i++) {
+			
+			  boolean b1= isPrime(i);
+			  if(b1==true) {
+				  System.out.println(i);
+				    
+			  }
+			
+		}
+		
+	}
+
+	private static boolean isPrime(int no) 
+	{
+		boolean b=true;
+	
+	  for(int i=2;i<no;i++) {
+		  
+		  if(no%i==0) {
+			
+			b=false;	
+		           }
+		
+	}
+	  return b;
+	}
+	
+	*/
+
+
+// display a table of a particular number         
+
+	/*public static void main(String args[]) {
+		
+		Scanner sc= new Scanner(System.in);
+		 System.out.println("enter the no");
+		  int no= sc.nextInt();
+		
+		
+		  for(int i=1;i<=10;i++) {
+			  System.out.println(no+"*"+i+"="+ no*i);
+			
+		  }
+		  
+	}*/
+	
+	//declare two numbers and one operator as a character. e.g. '+'
+	//using switch... case check which operator is declared and accordingly perform the action.
+	
+	/*public static void main(String args[]) {
+		
+		Scanner sc= new Scanner (System.in);
+		int a= sc.nextInt();
+		int b=sc.nextInt();
+		char c=sc.next().charAt(0);
+		
+		switch(c) {
+		
+		case '+':System.out.println("add"+ (a+b));
+		           break;
+			
+		case '-': System.out.println("sub"+ (a-b));
+		           break;
+			
+		 default:
+			 System.out.println("invalid char");
+			
+		}
+	}*/
+	
+	
+	//Display numbers from 3 to 30 except number 24  using loop.
+	
+	/*public static void main(String args[]) {
+		int i;
+		for( i=3;i<30;i++) 
+		{
+			if(i==24) 
+			{
+				continue;
+				
+			}
+			System.out.println(i);
+		}
+		
+	}*/
+	//Display numbers  1 to 10 using loop
+	/*public static void main(String args[]) {
+		
+		
+		for(int i=1;i<=10;i++) {
+			System.out.println(i);
+			
+		}
+		
+	}*/
+//	Using if…….else if….  Else,  display whether result is  fail, pass, second class , first class, Distinction etc.  
+
+	public static void main(String args[]) {
+		Scanner sc= new Scanner(System.in);
+		System.out.println("enter the marks");
+		int marks=sc.nextInt();
+		
+		if(marks>75) 
+		{
+			
+			System.out.println("i got distintion class");
+		}
+		else if(marks<75 && marks >=60) {
+			System.out.println("i got first class");
+			
+		}
+		else if(marks <60 && marks >50) 
+		{
+			
+			System.out.println("i got second class");
+		}
+		
+		else if(marks>=35 && marks<50 ) {
+			System.out.println("passed ");
+		}
+	
+	else{
+		System.out.println("failed");
+		
+	}
+	}
+}
+	
+
+
+
+
