@@ -1,0 +1,321 @@
+1> Create a multi-level inheritance , instantiate the child class and observe constructor invocation.Also show, if needed how will u invoke parent class constructor from child class ?
+-->
+package assigment;
+		
+class picture{
+	 picture(int price){
+		 System.out.println("picture price is:"+price);
+	 }
+			
+}
+
+class photograph extends picture{
+	photograph(){
+		super(50000);
+		 System.out.println("photograph constructor");
+	 }
+	photograph(String name){
+		super(1000);
+		System.out.println("photograph name:"+name);
+	}
+			
+}
+
+class painting extends photograph{
+	painting(){
+		super("prashant");
+		System.out.println("painting is skillfull work");
+	}
+			
+}
+		
+public class mutli_pal {
+	public static void main(String[] args) {
+		//photograph ref1=new photograph("vyavhare");
+		painting ref=new painting();
+		
+	}	
+}	
+--------------------------------------------------------------------------------------------------------
+2>
+Create a class "Vehicle", define a method "public void start()" in it.
+From this class derive a class FourWheeler. How will u override "start()" method of parent class ?*/
+class Vehicle{
+	
+	 void start() {
+	System.out.println("Vechicle is start");
+	}
+}
+class FourWheeler extends Vehicle 
+{
+	void start() {
+		System.out.println("fourwheeler is start");
+	}
+}
+public class Start {
+	public static void main(String[] args) {
+		FourWheeler ref=new FourWheeler();
+      ref.start();
+	}
+}
+----------------------------------------------------------------------------------------------------------
+3) Go for Hierarchical inheritance, create instances of child class and observe constructor invocation.
+class person{
+	 person(){	
+	System.out.println("person constructor");	
+	}
+	
+}
+class housewife extends person{
+	housewife(){
+		System.out.println("housewife constructor");
+	}
+}
+class solider extends person{
+	solider(){
+		System.out.println("solider constructor");
+	}
+}
+public class hierarchical {
+	public static void main(String[] args) {
+	  solider s=new solider();
+	  housewife h=new housewife();
+	}
+}
+-----------------------------------------------------------------------------------------------------------------
+
+4)Create a class "Top1" with "disp1()" method.
+From this class Derive "Bottom1", "Bottom2" and "Bottom3" classes ,override the "disp1()".
+Now show how will u achieve dynamic polymorphism.*/
+
+class Top1{
+	public void disp1() {
+		System.out.println("disp of Top1");
+	}
+	
+}
+class Bottom1 extends Top1
+{
+	public void disp1() {
+		System.out.println("disp of Bottom1");
+	}
+}
+class Bottom2 extends Top1
+{
+	public void disp1() {
+		System.out.println("disp of Bottom2");
+	}
+}
+class Bottom3 extends Top1
+{
+	public void disp1() {
+		System.out.println("disp of Bottom3");
+	}
+}
+public class Dynamic {
+  public static void perfrom(Top1 ref) {
+	  ref.disp1();
+	  
+  }
+  public static void main(String[] args) {
+	   perfrom(new Bottom1());
+	   perfrom(new Bottom2());
+	   perfrom(new Bottom3());
+}
+--------------------------------------------------------------------------------------------------------------------
+
+5)create abstract class Shape. declare "draw()" function as abstract. 
+From this class define "Triangle","Polygon" and "Circle" .
+create an array of Shape having 3 elements.
+store child objects into this array . and call
+their draw function.*/
+
+abstract class Shape {
+
+      public abstract void draw();
+}
+ class Triangle extends Shape{
+	 
+	 public void draw() {
+		 System.out.println("draw a Triangle");
+	 }
+ }
+ class Polygoan extends Shape{
+	 public void draw() {
+		 System.out.println("draw a Polygoan");
+	 }
+ }
+ class Circle extends Shape{
+	 public void draw(){
+		 System.out.println("draw a circle");
+	 }
+ }
+ 
+ public class shapeDemo{
+	 public static void main(String[] args) {
+		
+		 Shape arr[]=new Shape[3];
+		 arr[0]=new Triangle();
+		 arr[1]=new Polygoan();
+		 arr[2]=new Circle();
+		 for(int i=0;i<arr.length;i++) {
+			 arr[i].draw();
+		 }
+	}
+ }
+-------------------------------------------------------------------------------------------------------------- 
+6)Define interface "A" with "disp1()" method.
+Derive from "A", interface "B" with "disp2" method.
+Derive class "C" , from "B".
+Instantiate class "C" and call its members as well as derived from parent interfaces.*/
+interface A{
+	
+	  void disp1();
+
+}
+interface B extends A{
+	
+	void disp2();
+}
+class C implements B{
+	public void disp1() {
+		System.out.println("interface A disp");
+	}
+	public void disp2() {
+		System.out.println("interface B Disp");
+	}
+	
+}
+public class Demo {
+	public static void main(String[] args) {
+		
+		C ref=new C();
+		ref.disp1();
+		ref.Disp2();
+		
+	}
+
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+7)Define class "Parent1" with some data.
+Define interface "Parent2" with some methods.
+Derive a class "Child" from "Parent1" and "Parent2", instantiate it and call the members.*/
+class Parent1{
+	void disp() {
+		System.out.println(" parent1 disp");
+	}
+	void show() {
+		System.out.println("show method of parent1");
+	}
+}
+
+interface Parent2 {
+	void disp1();
+	void show1();
+}
+class Child extends Parent1 implements Parent2{
+	void disp() {
+		System.out.println("child disp");
+	}
+	public void disp1() {
+		System.out.println("interface method disp1 of parent2");
+	}
+	public void show1() {
+		System.out.println("nterface method show of parent2");
+	}
+	
+}
+public class Day5_7 {
+
+	public static void main(String[] args) {
+		Child ref=new Child();
+		ref.disp();
+		ref.disp1();
+		ref.show();
+		ref.show1();
+	}
+}
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+8)Define a class "base1" with only parameterized constructor.
+Derive a class "sub1" from "base1". This class should have following constructors
+	a) Default
+	b) one parameter
+	c) two parameter
+Now try to instantiate "sub1" , using any of the above mentioned constructors.*/
+
+class Base1{
+	int num,e;
+	Base1(int num,int f){
+		this.num=num;
+		e=f;
+	}
+	void disp() {
+		System.out.println(num+" "+e);
+	}
+}
+class Sub1 extends Base1{
+	Sub1(){
+		super(10,30);
+		System.out.println("no-arg constructor");
+	}
+	Sub1(int k){
+		super(20,40);
+		System.out.println("one parameter constructor"+" "+k);
+	}
+	Sub1(int i,int j){
+		super(80,90);
+		System.out.println("two parmaeter constructor"+" "+i+" "+j);
+	}
+}
+public class day5_8 {
+	
+public static void main(String[] args) {
+	Sub1 ref=new Sub1(10,20);
+	ref.disp();
+}
+}
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+9)create interface "Game" , have an abstract method "play()". 
+ from this interface implements classes like "Cricket" , "FootBall" and "Tennis".
+Now Define one more class 
+public class Demo with main function.
+In this class have a static method "perform" which will take interface reference as parameter.
+inside "perform()" see to it that any child object passed ,its "play()" method should be invoked.
+ Call "perform()" method from main function.*/
+interface Game{
+	
+	void play();
+	
+}
+class Cricket implements Game{
+	
+	public void play() {
+		System.out.println("paly cricket");
+	}
+}
+class FootBall implements Game{
+	public void play() {
+		System.out.println("play FootBall");
+	}
+}
+class Tennis implements Game{
+	public void play() {
+		System.out.println("play tennis");
+	}
+}
+
+public class Demo {
+	public static void perfrom(Game G) {
+		G.play();
+	}
+	public static void main(String[] args) {
+		perfrom(new Cricket());
+		perfrom(new FootBall());
+		perfrom(new Tennis());
+		
+	}
+
+}
