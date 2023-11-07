@@ -1,0 +1,321 @@
+
+//Q1
+package p1;
+
+
+
+
+public class MyArithException extends Exception {
+
+	
+	    public MyArithException(String s) {
+	    	
+	    	super(s);
+	    }
+}
+...................................................
+package p1;
+
+
+
+
+public class MyArithException extends Exception {
+
+	
+	    public MyArithException(String s) {
+	    	
+	    	super(s);
+	    }
+}
+............................................
+package p1;
+
+import java.util.Scanner;
+
+public class MyCalcApp {
+
+
+
+	public static int  CalDouble(int a1) throws MyArithException 
+	{
+
+		
+		if(a1<0) 
+		{
+			throw new MyArithException ("Zero not allowed ");
+
+		}
+		else if(a1==0) {
+
+                throw new MyArithException ("negative is not allowed");
+		}
+		return a1*2;
+
+
+
+
+
+	}
+	
+}
+.....................................................................
+Q3.
+
+package p1;
+
+import java.util.Scanner;
+
+class Myexception extends Exception{
+	Myexception(String s){
+		
+		super(s);
+	}
+	
+}
+
+public class DemoException {
+
+	public static void main(String[] args) throws Myexception {
+		System.out.println("enter the no");
+		Scanner sc= new Scanner(System.in);
+			int a=sc.nextInt();
+			show1(a);
+	}
+		public static void show1(int a) {
+			
+			try 
+			{
+				
+				show2(a);
+			 }
+			 catch(Myexception e) 
+			{
+				 
+				 System.out.println(e);
+			 }
+		}
+		
+      public static void show2 (int a) throws Myexception 
+      {
+    	  
+    	  show3(a);
+      }
+      public static void show3(int a) throws Myexception 
+      {
+    	  
+    	  if(a>10) {
+    		  throw new Myexception(" no is greater than 10 ");
+    		  
+    	  }
+    	  else {
+    		  
+    		  System.out.println(a);
+    		  
+    	  }
+    	  
+      }
+      
+	}
+
+
+..................................................................................
+
+Q5.
+
+// developer side
+
+package p1;
+
+ 
+public class MyResource implements AutoCloseable{
+	
+	      public MyResource(int capacity)throws ResourceNotAllocatedException {
+	    	  
+	    	  if(capacity >100) {
+	    	  throw new ResourceNotAllocatedException("space is not found"); 
+	    	  }
+	      }
+
+	public void display() {
+		
+		System.out.println("successful");
+	}
+
+	@Override
+	public void close()  {
+	
+		System.out.println("resource is closed");
+		
+	}
+
+......................................................
+//developer side
+
+
+
+
+	public class ResourceNotAllocatedException extends Exception{
+
+		public ResourceNotAllocatedException(String str) {
+			super(str);
+		} 
+	 }
+
+................................................
+
+
+	
+// client side
+
+package p1;
+import java.util.Scanner;
+
+import p1.*;
+public class Demo implements AutoCloseable {
+
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		int capacity=sc.nextInt();
+		
+		
+	  try {
+		  MyResource m= new  MyResource(20);
+		m.display();
+	  }
+	  catch(Exception r){
+		  
+		  System.out.println(r);
+	  }
+	}
+
+	@Override
+	public void close() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
+......................................................................
+
+4>
+// developer side
+package p1;
+
+public class Authenticator {
+
+	public Authenticator(String psw)throws InvalidLengthException {
+		
+		      int len=  psw.length();
+		if(len <5 || len >9) {
+		
+		throw new InvalidLengthException("length is invalid");
+		
+		}
+	}
+	
+	public void done() {
+		
+		System.out.println("successful authentication");
+	}
+	
+}
+
+
+
+// developer side
+
+package p1;
+
+public class InvalidLengthException extends Exception{
+
+	InvalidLengthException(String s){
+		
+		super(s);
+	}
+	
+}
+
+// client side
+
+
+
+package p2;
+import p1.*;
+public class DemoLen {
+
+	public static void main(String[] args) {
+		try {
+		Authenticator ar= new Authenticator("shaileshkkkk");
+        ar.done();
+	}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		}
+
+}
+.........................................................................
+
+Q2.
+// developer side
+package p1;
+
+public class NumberNotDivisibleBySevenException extends Exception{
+	
+	public NumberNotDivisibleBySevenException(String ss) {
+	
+	super(ss);
+        
+}}
+...............................................................................
+
+// client side
+
+package p2;
+
+import java.util.Scanner;
+import p1.*;
+
+ class Mythclass{
+	
+	 public void disp(int num)throws NumberNotDivisibleBySevenException {
+		
+		 if(num%7!=0) {
+		 
+		 
+			throw new NumberNotDivisibleBySevenException("no is not divisible by 7");
+		}
+		 else {
+			 
+			 System.out.println("no is divisible by 7");
+		 }
+		
+	 }
+}
+
+
+
+public class demo {
+
+	public static void main(String[] args) {
+		System.out.println("enter the no");
+		Scanner sc= new Scanner(System.in);
+		int no= sc.nextInt();
+		Mythclass m1= new Mythclass();
+		try {
+			m1.disp(no);
+			
+		}
+		catch(Exception e) {
+			//printStackTrace();
+			System.out.println(e);
+			
+		}
+	}
+		
+		
+	}
+
+
+
