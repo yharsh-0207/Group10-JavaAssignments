@@ -1,0 +1,44 @@
+
+Q8>
+
+package p1;
+
+class parent{
+	
+	parent() {
+		System.out.println("inside parent cons");
+	}
+		
+	void disp1(int a,int b) {
+		
+		System.out.println(a+"\t"+b);
+	}
+	
+}
+
+class child extends parent {
+	
+	child(){
+		System.out.println("Inside child cons");
+		
+	}
+	void dips1(int a,int b,int c) {
+		
+		System.out.println(a+"\t"+b+"\t"+c);
+	}
+	
+}
+public class Demo{
+	
+	public static void main(String args[]) {
+  
+		child ch= new child();
+
+         ch.disp1(10,20);
+         ch.dips1(10,20,30);
+      
+
+	}
+
+	
+}

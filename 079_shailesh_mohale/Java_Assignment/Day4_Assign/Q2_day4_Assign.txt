@@ -1,0 +1,34 @@
+package day4_3;
+
+Q2>
+class demo{
+	 
+	private static int k=10;  // static data member
+	private int s=20;    // non sttatic member
+	
+	  public static void getnum() 
+	 {
+		 
+	System.out.println(k);
+		 
+	 }
+	public void setnum() 
+	 {
+		 System.out.println(s);
+		 
+	 }
+	
+}
+
+public class Myclass {
+
+   
+	public static void main() {
+		demo d1= new demo();
+		d1.setnum();
+		demo.getnum();
+		
+	}}
+	
+
+

@@ -1,0 +1,42 @@
+package p1;
+
+class parent{
+	
+	parent() {
+		System.out.println("inside parent cons");
+	}
+		
+	void disp2() {
+		
+		
+		System.out.println("inside disp1");
+	}
+	
+}
+
+class child extends parent {
+	
+	child(){
+		System.out.println("Inside child cons");
+		
+	}
+	void disp2() {
+		
+		
+		System.out.println("inside disp2");
+	}
+	
+}
+public class Demo{
+	
+	public static void main(String args[]) {
+  
+		child ch= new child();
+
+         ch.disp2();
+      
+
+	}
+
+	
+}

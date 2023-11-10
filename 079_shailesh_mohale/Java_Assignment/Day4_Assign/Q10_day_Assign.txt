@@ -1,0 +1,52 @@
+Q10>
+
+package p1;
+
+interface Vehicle{
+	
+	 abstract void start(); // contract 	
+			
+}
+
+class TwoWheeler implements Vehicle {
+	
+	public void start() {
+		System.out.println("two wheeler is start");
+			
+	}
+	
+}
+class ThreeWheeler implements Vehicle{
+	
+	public void start() {
+		
+		System.out.println("three wheeler is start");
+	}
+	
+}
+
+class FourWheeler implements Vehicle{
+	
+	public void start() {
+		System.out.println("four wheeler is start");
+		
+	}
+	
+}
+
+
+public class Vdemo {
+
+	public static void main(String[] args) {
+		
+		Vehicle v1= new TwoWheeler();
+		Vehicle v2= new ThreeWheeler();
+		Vehicle v3= new FourWheeler();
+		
+		v1.start();
+		v2.start();
+		v3.start();
+		
+	}
+
+}
