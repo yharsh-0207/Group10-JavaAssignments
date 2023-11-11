@@ -1,0 +1,35 @@
+Q.3>
+
+
+package p2;
+
+class check{
+	
+	private int num1=10;
+	protected int num2=20;
+	public int num3=30;
+	 int num4=40;
+	
+	public void disp() {
+	
+ 	System.out.println(num1);
+
+	}
+	
+	
+}
+
+public class CheckDemo {
+	  public static void main(String args[]) {
+		  
+		 check c1= new check();
+		System.out.println(c1.num2); 
+		System.out.println(c1.num3); 
+		System.out.println(c1.num4); 
+		//System.out.println(d.num1);  not accesible outside the class.
+		
+		 c1.disp();
+	  }
+	
+	
+}

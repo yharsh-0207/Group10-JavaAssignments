@@ -1,0 +1,173 @@
+
+Q1>
+package p1;
+
+public class Th1 extends Thread {
+
+	public void run() {
+		char a='A';
+		for(int i=0;i<10;i++) {
+			System.out.println(a);	
+			a++;	
+		}		
+	}
+	
+	public static void main(String[] args) {
+		
+		Th1 t1= new Th1();
+		t1.start();
+	}
+}
+
+..........................................................................................
+Q2>
+
+package p1;
+
+public class Th1 implements Runnable {
+
+	@Override
+	public void run() {
+		char ch='A';
+		for(int i=0;i<10;i++) {
+			System.out.println(ch);
+			ch++;
+			
+		}
+		
+	}
+	public static void main(String args[]) {
+		
+		Th1 a= new Th1(); // object
+		Thread t1= new Thread(a);// thread
+		
+		
+		t1.start();
+		
+	}	
+}
+......................................................................................
+Q3>
+package p1;
+
+public class Th5 implements Runnable{
+
+	@Override
+	synchronized public void run() {
+		
+		for(int i=0;i<6;i++) {
+			
+			System.out.println("exec"+i);
+		}
+	}
+	
+	
+	public static void main(String args[]) {
+		
+		Th5 ob= new Th5();
+		Thread t1= new Thread(ob);
+                Thread t2= new Thread(ob);
+                Thread t3= new Thread(ob);
+	
+		
+		t1.start();
+		t2.start();
+		
+		t3.start();
+		
+		
+		
+		
+	}
+	
+}
+
+
+.............................................................................
+Q4>
+package p1;
+
+public class Th4 implements Runnable{
+
+	@Override
+	public void run() {
+		
+		disp4();
+	}
+	 synchronized static void disp4() {
+		
+		for(int i=0;i<11;i++) {
+			
+			System.out.println(i);
+		}
+	}
+	
+	public static void main(String args[]) {
+		
+		Th4 a= new Th4();
+		Thread t1= new Thread(a);
+		Thread t2= new Thread(a);
+		t1.start();
+		t2.start();
+	}
+	
+}
+..............................................................................
+Q5>
+package p1;
+
+class Th5 implements Runnable{
+
+	@Override
+	public void run() {
+		
+		if(Thread.currentThread().getName().equalsIgnoreCase("f1")) {
+		disp4();
+			
+		}
+		else {
+			
+			disp5();	
+		}
+		
+		
+	
+		
+	}
+	static void disp4() {
+		
+		for(int i=1;i<50;i++) {
+			System.out.println(i);
+			System.out.println(Thread.currentThread());
+			
+		}
+	}
+	static void disp5() {
+		for(int i=50;i>1;i--) {
+			System.out.println(i);
+			System.out.println(Thread.currentThread());
+			
+		}
+		
+	}
+	
+	public static void main(String args[]) {
+		
+		Th5 t1= new Th5();
+		Thread t12= new Thread(t1,"f1");
+		Thread t5= new Thread(t1,"t5");
+		
+		t12.setName("f1");
+		t5.setName("s1");
+		t12.start();
+		t5.start();
+		
+		
+		
+		
+		
+	}
+	
+	
+}
+.....................................................

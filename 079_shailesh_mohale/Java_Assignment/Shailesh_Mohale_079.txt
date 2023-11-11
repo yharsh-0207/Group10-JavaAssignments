@@ -1,0 +1,84 @@
+
+
+
+Q1>
+
+package p1;
+
+abstract class Account {
+	
+	 abstract void calcInt();
+		
+}
+
+
+class Saving extends Account{
+
+	@Override
+	void calcInt() {
+		System.out.println(" saving account calcInt ");
+		
+	}
+	
+}
+class Current extends Account {
+
+	@Override
+	void calcInt() {
+		System.out.println(" Current account calcInt");
+		
+	}
+}
+
+class RD extends Account {
+
+	@Override
+	void calcInt() {
+		System.out.println("RD account calcInt");
+		
+	}
+	
+	
+	
+}
+public class AcDemo {
+
+	
+	 public static void perform(Account ref) {
+		 
+		
+		 if(ref instanceof Saving ) {
+			 Saving s=(Saving)ref;
+			 ref.calcInt();
+			 
+		 }
+		 
+	 }
+	public static void main(String[] args) {
+	
+		perform(new Saving());
+
+	}
+
+}
+.........................................................
+Q2>
+
+package p1;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		
+		for(int i=1;i<5;i++) {
+			for(int j=1;j<=i;j++) {
+				System.out.print(j);
+				
+			}
+			System.out.println();
+			
+		}
+
+	}
+
+}

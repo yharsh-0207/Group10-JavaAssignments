@@ -1,0 +1,49 @@
+Q4>
+
+
+package p1;
+
+class person {
+	
+	int num1=10;
+	
+    person()
+{
+
+  System.out.println("inside person constructor");
+}
+ void disp() {
+	 
+	 System.out.println(num1);
+	 
+ }
+}
+class employee extends person{
+	
+	int num2=20;
+	
+       employee()
+{
+     System.out.println("insise employee constructor");
+}
+
+   
+	void disp2()
+	{
+		System.out.println(num2);
+	}
+	}
+
+public class Demo {
+
+	public static void main(String[] args) {
+		
+		 employee e1= new employee();
+		 e1.disp2();
+		 e1.disp();
+		 
+		 
+
+	}
+
+}
