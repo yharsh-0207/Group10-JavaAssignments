@@ -1,0 +1,138 @@
+
+//1) define a functional interface "First" with an abstract method "void disp1()".
+//define a class "Second" with a method "void fun1()"
+//
+//inside main function create a method reference for "First" and invoke "fun1" of "Second"
+
+package p1;
+/*
+interface First{
+	
+	void display();
+	
+}
+
+
+public class MethodRefe {
+
+	 void fun() {
+		 
+		 
+	 }
+	public static void main(String[] args) throws Exception {
+		MethodRefe r= new MethodRefe();
+	//try(AutoCloseable ac=r::fun){
+//			System.out.println(ac.getClass().getName());
+//			
+//		}
+		First ref=r::fun;
+		System.out.println(ref.getClass().getName());
+		
+	}
+
+}
+*/
+//2>
+// define a functional interface "Third" with an abstract method "void show(int num)".
+//define a class "Sample" with a method "void disp(int num)"
+/*
+interface third{
+	
+	void Show(int num);
+	
+}
+
+class sample{
+	
+	void disp(int num) {
+		System.out.println(num);
+	}
+}
+public class MethodRefe{
+	public static void main(String args[]) {
+	sample s1= new sample();
+	third r=s1::disp;
+    r.Show(500);
+	
+}
+}
+*/
+
+//3>
+//3) define a functional interface "Fifth" with an abstract method "int add(int a,int b)"
+//define a class Math1 with a method "int calc(int a,int b)" 
+//
+//inside main function invoke "calc" method with the help of
+//	a) lamdba expression
+//	b) method reference
+/*
+interface  fifth{
+	
+	int add(int a,int b);
+	
+}
+class Math1{
+	
+	int calc(int a,int b) {
+		return a+ b;
+		
+				
+	}
+}
+ 
+public class MethodRefe{
+	
+	// by using method reference
+	public static void main(String [] args) {
+//	Math1 m1= new Math1();
+//	fifth f=m1::calc;
+//	f.add(10, 20);
+	
+	// by using lambda
+	Math1 m1= new Math1();
+	fifth fd=(a,b)->{
+		return a+b;
+	};
+	System.out.println(fd.add(10,20));
+	
+}
+}
+*/
+//4) define a functional interface "Sixth" with an abstract method "void disp5()".
+//define a class "Sample" with a static method "void fun1()"
+//
+//inside main function create a method reference for "Sixth" and invoke "fun1" of "Sample"
+
+
+interface Sixth{
+	
+	void disp5();
+	
+}
+
+class Sample{
+	
+	static void fun() {
+		
+		System.out.println("hello");
+	}
+}
+
+public class MethodRefe{
+	public static void main(String args[]) {
+	Sample s1= new Sample();
+	Sixth s=Sample::fun;
+	
+	s.disp5();
+	
+}
+}
+
+
+
+
+
+
+
+
+

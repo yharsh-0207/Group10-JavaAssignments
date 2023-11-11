@@ -1,0 +1,101 @@
+package p1;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+class Myclass implements Serializable{
+	
+	private String name;
+	private int num;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
+	Myclass(int num){
+		
+		this.num=num;
+		
+	}
+	public String toString() {
+		return "num="+num;
+		
+		
+	}
+	
+	
+}
+public class CollectionHashMap {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		Map<String,Myclass>Hashmap= new HashMap<String,Myclass>();
+		Myclass m1= new Myclass(10);
+		Myclass m2= new Myclass(20);
+		Myclass m3= new Myclass(40);
+		Myclass m4= new Myclass(50);
+		Hashmap.put("Shailesh",m1);
+		Hashmap.put("Ganesh",m2);
+		Hashmap.put("Rajya",m3);
+		Hashmap.put("gopy",m4);
+		
+              try(FileOutputStream fr= new FileOutputStream("D:\\abh.txt") ){
+            	  
+            	  try(ObjectOutputStream  fo= new ObjectOutputStream(fr)){
+            		  
+            		     fo.writeObject(Hashmap);
+            	  } 
+			} catch (Exception e1) {
+				
+				e1.printStackTrace();
+			}
+              
+              // to read the 
+             m1=m2=m3=m4=null;
+              
+              try(FileInputStream fd= new FileInputStream("D:\\abh.txt")){
+            	  
+            	  try(ObjectInputStream fk= new ObjectInputStream (fd)){
+            		
+            		   Map<String,Myclass> ms =( Map<String,Myclass>)fk.readObject();
+            		         Set<Entry<String, Myclass>> set = ms.entrySet();
+            		         Iterator itr1= set.iterator();
+            		         
+            		         while(itr1.hasNext()) {
+            		        	 
+            		        Map.Entry<String, Myclass>rd= ( Map.Entry<String, Myclass>)itr1.next();
+            		        	System.out.println(rd.getKey()+"\t"+rd.getValue()+rd.getClass().getName());
+            		         }
+            		         
+            		 
+            	  }
+              }
+              catch (Exception e) {		
+					e.printStackTrace();
+			}
+           
+              ;
+		
+	}
+
+}
