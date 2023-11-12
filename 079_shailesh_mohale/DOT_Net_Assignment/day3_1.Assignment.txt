@@ -1,0 +1,41 @@
+Q1>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp12
+{
+    internal class Student
+    {
+        string name;
+        int maths_mark;
+        int sci_mark;
+        int eng_mark;
+
+        public static int Total_mark(int maths_mark, int sci_mark, int eng_mark) { 
+        
+            int total= maths_mark+ sci_mark+ eng_mark;
+            return total;
+        }
+
+          static Student() {
+     Console.WriteLine("Shri shivaji high school");
+ 
+             }
+        public void display(string s) {
+
+            Console.WriteLine(Student.Total_mark(100,100,100));
+            name = s;
+            Console.WriteLine(name);
+
+        }
+        static void Main(string[] args)
+        {
+           Student s1= new Student();
+            s1.display("shailesh");
+        }
+    }
+}
+................................................

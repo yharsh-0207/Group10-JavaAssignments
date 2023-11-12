@@ -1,0 +1,60 @@
+Create class Employee with private vatiable id name salary, netsalary
+Create method public double Calculatesal()
+Which will return net salary. Netsalary= salary-salary*10%
+Create method display which will display Name and net salary.
+Create 3 object of a class and call display method.
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp12
+{
+    internal class Employee
+    {
+        string name;
+        int id;
+        double salary;
+        double netSalary;
+
+        public double CalculateSalary() {
+
+             netSalary = salary - salary * 10 / 100;
+
+            return netSalary;
+        }
+        Employee(string Name,int Id,double sal,double net) {
+            name = Name;
+            id = Id;
+            salary = sal;
+             netSalary = net;
+
+        }
+        public void display() {
+
+            Console.WriteLine(name);
+            Console.WriteLine(id);
+                Console.WriteLine(salary);
+                
+            Console.WriteLine(netSalary);
+        
+        }
+
+        public static void Main(String []args) {
+
+            Employee e1 = new Employee("raj",12,120000,1200);
+             e1.display();
+           Console.WriteLine(e1.CalculateSalary());
+
+        }
+
+
+
+
+    }
+}

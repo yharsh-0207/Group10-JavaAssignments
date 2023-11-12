@@ -1,0 +1,148 @@
+
+//Accept two number from user and do the sum of it
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sum
+{
+    internal class Myclass
+    {
+        public static void Main(string[] args)
+        {
+           string s1= Console.ReadLine();
+            string s2 = Console.ReadLine();
+
+            int num1=int.Parse(s1);
+            int num2=int.Parse(s2);
+
+            int res = num1 + num2;
+            Console.WriteLine(res);
+        }
+    }
+}
+
+............................................................
+//Accept a float value and print square of that number
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sum
+{
+    internal class Myclass
+    {
+        public static void Main(string[] args)
+        {
+            // by using parse
+            Console.WriteLine("enter the string");
+           string s1= Console.ReadLine();
+           
+
+            float num1=float.Parse(s1);
+            
+
+            float res = num1*num1;
+            Console.WriteLine(res);
+
+            // by using ToSingle
+              float  n1= Convert.ToSingle(s1);
+             
+
+             Console.WriteLine(n1*n1);
+          // by using TryParse
+          float f;
+          bool b1=float.TryParse(s1, out f);
+        
+
+       
+          Console.WriteLine(f*f);
+
+          if (b1==true) {
+
+              Console.WriteLine(b1);
+          }
+             
+        }
+
+    }
+}
+...............................................................
+
+3>Create a class calculator and write 3 instance method square, cube, round[if in put 22.5 o/p 22]
+Which will return square .cube and rounded number.
+Create object and call method and print the result.
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sum
+{
+    internal class Calculator
+    {
+
+       
+        public static void Main(string[] args)
+        { 
+            string s1=Console.ReadLine();
+            float a=Convert.ToSingle(s1);
+
+            Calculator c1 = new Calculator();
+            Console.WriteLine(c1.sqr(a));
+           Console.WriteLine( c1.cube(a));
+            Console.WriteLine(c1.round(a));
+
+        }
+        public float sqr(float a) { 
+        
+            return a*a;
+        }
+        public float cube(float a) {
+
+            return a * a * a;
+        }
+        public int round(float a) {
+
+            return Convert.ToInt32(a);
+        }
+        
+    }
+}
+.........................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

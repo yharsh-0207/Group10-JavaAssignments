@@ -1,0 +1,52 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp12
+{
+    internal class Account
+    {
+        string name;
+        int id;
+        int Balance;
+
+
+        public   void deposit(int amt) { 
+        
+            Balance = Balance+ amt;
+        }
+        public void withdraw(int amt) { 
+        
+            Balance = Balance- amt;
+        }
+
+        public void display(string s, int balance) {
+
+            name = s;
+            Console.WriteLine(this.Balance =this.Balance+ balance);
+
+            Console.WriteLine(name);    
+        }
+         static Account() { 
+ 
+      Console.WriteLine("state bank of india");
+                    }
+        static void Main(string[] args)
+        {
+         Account a1= new Account();
+            a1.display("shailesh", 1000);
+            a1.deposit(20);
+            a1.withdraw(2);
+
+            Account a2 = new Account();
+            
+            a2.deposit(2000);
+            a2.withdraw(20);
+            a2.display("raj", 5000);
+
+
+        }
+    }
+}

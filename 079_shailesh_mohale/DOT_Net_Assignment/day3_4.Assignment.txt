@@ -1,0 +1,82 @@
+/*
+// Create class Employee having member Id, Name, Salary,  NetSalary, Dept d
+//Create enum Dept {MKT, ADMIN, ADV}
+//Create method public double paytax(double p) {return tax amount and set netsalary(note: netsalary=salary-salary*p%)}
+//Create method display to display name and netsalary and department
+//When you load application it should print name of company.
+//  new Employee(1,”Raj”,50000,Dept.MKT)
+
+ */
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp12
+{
+    enum dept
+    {
+
+        MKT, ADMIN, ADV
+
+    }
+    internal class Employee
+    {
+        string name;
+        int id;
+        double salary;
+        double netSalary;
+        dept d;
+       
+        static Employee() {
+
+            Console.WriteLine("tata consultancy services");
+        
+        }
+        public double Paytax(double p)
+        {
+
+            netSalary = salary - salary * 0.1;
+            double taxamount = salary * p;
+            return taxamount;
+           
+
+        }
+        Employee(string Name, int Id, double sal,  dept d1)
+        {
+            name = Name;
+            id = Id;
+            salary = sal;
+            d = d1;
+
+
+        }
+        public void display()
+        {
+
+            Console.WriteLine(name);
+            Console.WriteLine(netSalary);
+            Console.WriteLine("{0},{1},{2}", dept.MKT, dept.ADMIN, dept.ADV);
+
+        }
+
+        public static void Main(String[] args)
+        {
+
+            Employee e1 = new Employee("raj",12,5000,dept.ADMIN);
+           Console.WriteLine(e1.Paytax(2));
+            e1.display();
+
+        }
+
+
+
+
+    }
+}
